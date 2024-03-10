@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library App</title>
+    <link rel = "stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-grid">
+        <div class="sidebar">
+            <h2>Book Tracker</h2>
+            <p>Add the details of the book here.</p>
+            <form id = "bookForm">
+                <label for="title">Title of Book:</label>
+                <input type="text" id="title" name="title" required>
+        
+                <label for="author">Author of Book:</label>
+                <input type="text" id="author" name="author" required>
+        
+                <label for="publisher">Publisher:</label>
+                <input type="text" id="publisher" name="publisher" required>
+        
+                <label for="serialNumber">Book Serial Number:</label>
+                <input type="number" id="serialNumber" name="serialNumber" required>
+        
+                <label for="numPages">Number of Pages:</label>
+                <input type="number" id="numPages" name="numPages" required>
+        
+                <label for="readStatus">Read Status:</label>
+                <input type="text" id="readStatus" name="readStatus" required> 
+                <div>
+                    <button>Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="main-content">
+            <h2>My Personal Book Tracker</h2>
+            <p>Personal book tracker for tracking books I have (or have not) read. </p>
+
+            <table id="bookTable">
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Serial Number</th>
+                    <th>Number of Pages</th>
+                    <th>Read Status</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
