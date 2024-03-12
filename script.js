@@ -1,4 +1,6 @@
 const myLibrary = [];
+let bookIndex = 0;
+let removeIndex = 0;
 let submitBtn = document.getElementById("submit-button");
 
 let formBookTitle = document.getElementById("title");
@@ -40,7 +42,30 @@ function addBookToLibrary(bookObj){
     cellBookNumPages.textContent=bookObj.bookNumPages;
 
     let cellBookReadStatus= document.createElement("td")
-    cellBookReadStatus.textContent=bookObj.bookReadStatus;
+    let cellBookReadStatusBtn = document.createElement("button")
+    
+    bookIndex++;
+    cellBookReadStatusBtn.innerText=bookObj.bookReadStatus
+    cellBookReadStatusBtn.setAttribute("class",bookIndex)
+    cellBookReadStatus.appendChild(cellBookReadStatusBtn)
+
+    cellBookReadStatusBtn.addEventListener("click",()=>{
+        if(cellBookReadStatusBtn.innerText=="Read"){
+            cellBookReadStatusBtn.innerText="Not Read"
+        }
+        else{
+            cellBookReadStatusBtn.innerText="Read"
+        }
+    })
+
+    let cellRemove = document.createElement("td");
+    let removeBookBtn = document.createElement("button");
+    removeIndex++;
+    removeBookBtn.innerText = "Delete"
+    cellBookReadStatusBtn.setAttribute("class",removeIndex)
+    cellRemove.appendChild(removeBookBtn);
+
+  
 
     libraryTable.appendChild(row);
     row.appendChild(cellBookTitle);
@@ -49,6 +74,7 @@ function addBookToLibrary(bookObj){
     row.appendChild(cellBookSerialNumber);
     row.appendChild(cellBookNumPages);
     row.appendChild(cellBookReadStatus);
+    row.appendChild(cellRemove);
 
 }
 
@@ -72,3 +98,5 @@ submitBtn.addEventListener("click",function (e) {
     e.preventDefault();
     
 });
+
+
