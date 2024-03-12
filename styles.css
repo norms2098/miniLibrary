@@ -26,11 +26,15 @@ body{
 #bookForm{
     gap:10px;
 }
-#bookForm input{
+#bookForm input[type=text],
+#bookForm input[type=number]{
     width:90%;
     border-radius: 10px;
     border: 0;
     height:20px;
+}
+#bookForm p{
+    margin-bottom: 0;
 }
 
 #bookForm button{
