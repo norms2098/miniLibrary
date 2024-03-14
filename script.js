@@ -19,7 +19,6 @@ function Book(title,author,publisher,serialNum,numPages,readStatus){
     this.bookSerialNum = serialNum;
     this.bookNumPages = numPages;
     this.bookReadStatus = readStatus;
-
 }
 
 function addBookToLibrary(bookObj){
@@ -52,7 +51,6 @@ function addBookToLibrary(bookObj){
     cellBookReadStatusBtn.addEventListener("click",()=>{
         if(cellBookReadStatusBtn.innerText=="Read"){
             cellBookReadStatusBtn.innerText="Not Read"
-
             updateReadStatusInArray(cellBookReadStatusBtn.className,"Not Read")
         }
         else{
@@ -65,7 +63,7 @@ function addBookToLibrary(bookObj){
     let removeBookBtn = document.createElement("button");
     removeIndex++;
     removeBookBtn.innerText = "Delete"
-    cellBookReadStatusBtn.setAttribute("class",removeIndex)
+    removeBookBtn.setAttribute("class",removeIndex)
     cellRemove.appendChild(removeBookBtn);
 
   
@@ -94,6 +92,7 @@ function getReadStatus(){
     }
     return readStatus
 }
+
 
 submitBtn.addEventListener("click",function (e) {
    
