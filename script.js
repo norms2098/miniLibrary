@@ -81,14 +81,7 @@ function addBookToLibrary(bookObj){
 
 }
 function updateReadStatusInArray(indexOfBook,updatedReadStatus){
-    for(let i=0;i<myLibrary.length;i++){
-        console.log(myLibrary[i])
-    }
     myLibrary[parseInt(indexOfBook)-1].bookReadStatus = updatedReadStatus;
-
-    for(let j=0;j<myLibrary.length;j++){
-        console.log(myLibrary[j])
-    }
 }
 
 function getReadStatus(){
