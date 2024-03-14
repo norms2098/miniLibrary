@@ -52,9 +52,12 @@ function addBookToLibrary(bookObj){
     cellBookReadStatusBtn.addEventListener("click",()=>{
         if(cellBookReadStatusBtn.innerText=="Read"){
             cellBookReadStatusBtn.innerText="Not Read"
+
+            updateReadStatusInArray(cellBookReadStatusBtn.className,"Not Read")
         }
         else{
             cellBookReadStatusBtn.innerText="Read"
+            updateReadStatusInArray(cellBookReadStatusBtn.className,"Read")
         }
     })
 
@@ -76,6 +79,16 @@ function addBookToLibrary(bookObj){
     row.appendChild(cellBookReadStatus);
     row.appendChild(cellRemove);
 
+}
+function updateReadStatusInArray(indexOfBook,updatedReadStatus){
+    for(let i=0;i<myLibrary.length;i++){
+        console.log(myLibrary[i])
+    }
+    myLibrary[parseInt(indexOfBook)-1].bookReadStatus = updatedReadStatus;
+
+    for(let j=0;j<myLibrary.length;j++){
+        console.log(myLibrary[j])
+    }
 }
 
 function getReadStatus(){
